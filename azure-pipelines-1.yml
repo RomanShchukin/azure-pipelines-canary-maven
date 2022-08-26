@@ -13,10 +13,12 @@ steps:
 - task: Maven@3
   inputs:
     mavenPomFile: 'DeepSpace/pom.xml'
-    mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.8'
-    jdkArchitectureOption: 'x64'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'package'
+    options: '-Dmaven.wagon.http.pool=false'
+    testResultsFiles: '**/TEST-*.xml'
+    codeCoverageToolOption: Cobertura
+    codeCoverageFailIfEmpty: true
+    jdkVersionOption: 1.8
+    mavenAuthenticateFeed: true
+    checkStyleRunAnalysis: true
+    pmdRunAnalysis: true
+    findBugsRunAnalysis: true
