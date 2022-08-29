@@ -21,18 +21,18 @@ steps:
 - task: Maven@3.209.0
   inputs:
     mavenPomFile: 'DeepSpace/pom.xml'
-    options: '-Dmaven.wagon.http.pool=false'
-    testResultsFiles: '**/TEST-*.xml'
+    goals: 'clean verify -X'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
     codeCoverageToolOption: JaCoCo
-    codeCoverageFailIfEmpty: true
-    jdkVersionOption: 1.8
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
     mavenAuthenticateFeed: false
-    checkStyleRunAnalysis: true
-    pmdRunAnalysis: true
-    findBugsRunAnalysis: true
-#    codeCoverageClassFilter: '+com.microsoft.tfs.demo.Image'
-    isJacocoCoverageReportXML: true
+    effectivePomSkip: false
     sonarQubeRunAnalysis: true
+    isJacocoCoverageReportXML: true
+    sqMavenPluginVersionChoice: 'latest'
+#    codeCoverageClassFilter: '+com.microsoft.tfs.demo.Image'
 - task: SonarQubePublish@5
   inputs:
     pollingTimeoutSec: '300'
