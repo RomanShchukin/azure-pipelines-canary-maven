@@ -22,5 +22,5 @@ steps:
     checkStyleRunAnalysis: true
     pmdRunAnalysis: true
     findBugsRunAnalysis: true
-#    codeCoverageClassFilter: '+com.microsoft.tfs.demo.Image'
+    codeCoverageClassFilter: '+com.microsoft.tfs.demo.Image'
     isJacocoCoverageReportXML: true
