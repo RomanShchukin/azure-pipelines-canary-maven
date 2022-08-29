@@ -18,7 +18,7 @@ steps:
     extraProperties: |
       sonar.projectKey=RomanShchukinTest_3
       sonar.projectName=RomanShchukinTest_3
-- task: Maven@3.209.0
+- task: Maven@3.209.4
   inputs:
     mavenPomFile: 'DeepSpace/pom.xml'
     goals: 'clean verify -X'
