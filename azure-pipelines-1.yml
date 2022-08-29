@@ -26,7 +26,7 @@ steps:
     codeCoverageToolOption: JaCoCo
     codeCoverageFailIfEmpty: true
     jdkVersionOption: 1.8
-    mavenAuthenticateFeed: true
+    mavenAuthenticateFeed: false
     checkStyleRunAnalysis: true
     pmdRunAnalysis: true
     findBugsRunAnalysis: true
