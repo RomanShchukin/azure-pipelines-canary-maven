@@ -15,7 +15,7 @@ steps:
     mavenPomFile: 'DeepSpace/pom.xml'
     options: '-Dmaven.wagon.http.pool=false'
     testResultsFiles: '**/TEST-*.xml'
-    codeCoverageToolOption: Cobertura
+    codeCoverageToolOption: JaCoCo
     codeCoverageFailIfEmpty: true
     jdkVersionOption: 1.8
     mavenAuthenticateFeed: true
